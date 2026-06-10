@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en" dir="ltr" class="is-web standart">
   <head>
     <base href="./" />
@@ -26,7 +27,7 @@
         display: none;
       }
     </style>
-    <script type="module" crossorigin src="/assets/web-D22gvPMu.js"></script>
+    <script type="module" crossorigin src="/assets/web-CTRzscTP.js"></script>
     <link rel="modulepreload" crossorigin href="/assets/Car-7mKnn4yi.js">
     <link rel="stylesheet" crossorigin href="/assets/Car-CWb02WtN.css">
   </head>
@@ -64,12 +65,12 @@
               <div class="pgc-settings-tab volume">
                 <div class="pgc-settings-inner">
                   <i
-                    class="fa-solid fa-volume-xmark volIcon" 
+                    class="fa-solid fa-volume-high volIcon" 
                     style="color: rgb(255, 255, 255)"
                   ></i>
                 </div>
               </div>
-              <div class="pgc-settings-tab disabled">
+              <div class="pgc-settings-tab historyIcon">
                 <div class="pgc-settings-inner">
                   <i
                     class="fa-solid fa-clock-rotate-left"
@@ -223,8 +224,9 @@
                                 max="1"
                                 step="0.1"
                                 type="range"
-                                class="pgc-inp-range-s"
-                                value="0"
+                                class="pgc-inp-range-s music-slider"
+                                value="0.5"
+
                               />
                             </div>
                             <div
@@ -234,7 +236,7 @@
                               <div class="pgc-inp-range-line-sp"></div>
                             </div>
                           </div>
-                          <i class="icon-music-off pgc-setting-icon"></i>
+                          <i class="icon-sound pgc-setting-icon musicIcon"></i>
                         </div>
                       </div>
                       <div class="pgc-setting-row">
@@ -249,8 +251,8 @@
                                 max="1"
                                 step="0.1"
                                 type="range"
-                                class="pgc-inp-range-s"
-                                value="0"
+                                class="pgc-inp-range-s sound-slider"
+                                value="0.5"
                               />
                             </div>
                             <div
@@ -260,7 +262,8 @@
                               <div class="pgc-inp-range-line-sp"></div>
                             </div>
                           </div>
-                          <i class="icon-mute pgc-setting-icon"></i>
+                          
+                          <i class="icon-music pgc-setting-icon soundIcon"></i>
                         </div>
                       </div>
                       <div class="pgc-setting-row">
@@ -268,7 +271,7 @@
                           <span class="pgc-setting-name">50% Cashout</span>
                         </div>
                         <div class="pgc-setting-row-column right">
-                          <div class="pgc-switcher active"></div>
+                          <div class="pgc-switcher active" id="halfCOswitch"></div>
                         </div>
                       </div>
                     </div>
@@ -340,6 +343,61 @@
                 </div>
               </div>
             </div>
+
+            <div class="pgc-overlay-wr right">
+              <div class="pgc-overlay-section historySection">
+                <div class="pgc-overlay-head">
+                  <div class="pgc-overlay-top-row">
+                    <div class="pgc-overlay-top-row-first-block">
+                      <i class="icon-results"></i>
+                    </div>
+                    <p class="pgc-overlay-text">History</p>
+                    <div class="pgc-overlay-top-row-close-block history">
+                      <i
+                        class="fa-solid fa-xmark"
+                        style="color: rgb(255, 255, 255)"
+                      ></i>
+                    </div>
+                  </div>
+                  <div class="pgc-overlay-types">
+                    <span class="pgc-overlay-types-text">Round ID</span
+                    ><span class="pgc-overlay-types-text">Date</span
+                    ><span class="pgc-overlay-types-text">Bet</span>
+                    <span class="pgc-overlay-types-text">win</span>
+                  </div>
+                </div>
+                <div class="pgc-overlay-content">
+                  <button class="pgc-overlay-close">
+                    <i class="icon-double-arrow-right"></i>
+                  </button>
+                  <div class="scroll-holder">
+                    <div class="scrollable-container">
+                      <div class="pgc-results-fairness-check-rows-wr">
+                        
+                        <div class="results-fairness-check-row">
+                          <div class="results-fairness-check-column">
+                            <span class="results-fairness-check-id"
+                              >10285516</span
+                            >
+                          </div>
+                          <div class="results-fairness-check-column">
+                            <p class="res-row-text-upcoming">12/4 22:01</p>
+                          </div>
+                          <div class="results-fairness-check-column">
+                            <p class="res-row-text-upcoming">100</p>
+                          </div>
+                          <div class="results-fairness-check-column check">
+                            <p class="res-row-text-upcoming">200</p>
+                          </div>
+                        </div>
+                        
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             <div class="pgc-game-holder">
               <div class="pgc-game-backside"></div>
               <div class="game-container">
@@ -578,7 +636,7 @@
                               </button>
 
                               <button
-                                class="bet-btn-block default bet"
+                                class="bet-btn-block default bet" style="display: none;"
                                 id="bet-left"
                               >
                                 <p class="bet-text-from-btn">Bet</p>
@@ -795,7 +853,7 @@
                               </button>
 
                               <button
-                                class="bet-btn-block default bet"
+                                class="bet-btn-block default bet" style="display: none;"
                                 id="bet-right"
                               >
                                 <p class="bet-text-from-btn">Bet</p>
